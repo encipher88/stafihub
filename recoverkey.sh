@@ -4,7 +4,7 @@
 	sleep 2
 		if [[ ! $mnemonic ]]; then
 		read -p "Enter bip39 mnemonic: " mnemonic
-		echo 'export "mnemonic"='${mnemonic} >> $HOME/.bash_profile
+		echo 'export mnemonic='"${mnemonic}" >> $HOME/.bash_profile
 	fi
 	source $HOME/.bash_profile
 sudo tee <<EOF >/dev/null $HOME/.stafihub/stafihub_add_key.sh 
