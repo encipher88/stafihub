@@ -179,17 +179,17 @@ function createValidator {
 	echo -e '\n\e[42mCreate validator...\e[0m\n' && sleep 1
 	
    
-	stafihubd tx staking create-validator -y 
-	--amount=1000000ufis 
-	--pubkey=$(stafihubd tendermint show-validator) 
-	--moniker=$MONIKER 
-	--commission-rate=0.10 
-	--commission-max-rate=0.20 
-	--commission-max-change-rate=0.01 
-	--min-self-delegation=1 
-	--from=$WALLET
-	--chain-id=$CHAIN_ID 
-	--gas-prices=0.025ufis 
+	stafihubd tx staking create-validator -y \
+	--amount=1000000ufis \
+	--pubkey=$(stafihubd tendermint show-validator) \
+	--moniker=$MONIKER \
+	--commission-rate=0.10 \
+	--commission-max-rate=0.20 \
+	--commission-max-change-rate=0.01 \
+	--min-self-delegation=1 \
+	--from=$WALLET \
+	--chain-id=$CHAIN_ID \
+	--gas-prices=0.025ufis \ 
 	--yes
 	
 }
