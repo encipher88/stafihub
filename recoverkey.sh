@@ -4,7 +4,7 @@
 	sleep 2
 		if [[ ! $mnemonic ]]; then
 		read -p "Enter bip39 mnemonic: " mnemonic
-		echo 'export mnemonic='${mnemonic} >> $HOME/.bash_profile
+		echo 'export "mnemonic"='${mnemonic} >> $HOME/.bash_profile
 	fi
 	source $HOME/.bash_profile
 sudo tee <<EOF >/dev/null $HOME/.stafihub/stafihub_add_key.sh 
@@ -14,7 +14,7 @@ echo "set timeout -1
 spawn stafihubd keys add $WALLET --recover --home $HOME/.stafihub
 match_max 100000
 expect -exact \"Enter your bip39 mnemonic\"
-send -- "$mnemonic\r"
+send -- \"$mnemonic\r\"
 expect -exact \"Enter keyring passphrase:\"
 send -- \"$PASSWORD\r\"
 expect -exact \"\r
