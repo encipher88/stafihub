@@ -48,6 +48,8 @@ $HOME/.stafihub/stafihub_add_valkey.sh &>> $HOME/.stafihub/valop.txt
 export VALOPER_ADDRESS=`cat $HOME/.stafihub/valop.txt | grep '^stafivaloper' | awk '{print$1}' | sed 's/.$//'`
 echo 'export VALOPER_ADDRESS='${VALOPER_ADDRESS} >> $HOME/.bash_profile
 . $HOME/.bash_profile
-echo -e '\n\e[45mYour wallet address:' $VALOPER_ADDRESS '\e[0m\n'
+echo -e '\n\e[45mYour validator address:' $VALOPER_ADDRESS '\e[0m\n'
+
+echo -e "You can ask for tokens in the #faucet Discord channel. \e[32m!faucet send YOUR_WALLET_ADDRESS\e[39m!"
 
 cd $HOME
