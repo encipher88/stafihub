@@ -177,7 +177,7 @@ function deleteStafihub {
 
 function createValidator {
 	echo -e '\n\e[42mCreate validator...\e[0m\n' && sleep 1
-	if [[ `quicksilverd q bank balances $WALLET_ADDRESS | grep amount` -gt "1" ]]; then
+	if [[ `stafihubd q bank balances $WALLET_ADDRESS | grep amount` -gt "1" ]]; then
    
 	stafihubd tx staking create-validator -y 
 	--amount=1000000ufis 
