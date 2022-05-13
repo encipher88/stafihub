@@ -155,7 +155,8 @@ fi
 
 function createWallet {
 	source $HOME/.bash_profile
-	wget -q -O createkeys.sh https://raw.githubusercontent.com/encipher88/stafihub/main/createkeys.sh && chmod +x createkeys.sh && bash createkeys.sh
+	wget -q -O createkeys.sh https://raw.githubusercontent.com/encipher88/stafihub/main/createkeys.sh && chmod +x createkeys.sh 
+	bash $HOME/createkeys.sh
 }
 
 
