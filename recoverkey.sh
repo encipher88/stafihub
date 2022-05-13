@@ -14,7 +14,7 @@ echo "set timeout -1
 spawn stafihubd keys add $WALLET --recover --home $HOME/.stafihub
 match_max 100000
 expect -exact \"Enter your bip39 mnemonic\"
-send -- \"$mnemonic\r\"
+send -- "$mnemonic\r"
 expect -exact \"Enter keyring passphrase:\"
 send -- \"$PASSWORD\r\"
 expect -exact \"\r
