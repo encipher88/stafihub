@@ -182,6 +182,8 @@ echo 'export WALLET_ADDRESS='${WALLET_ADDRESS} >> $HOME/.bash_profile
 . $HOME/.bash_profile
 echo -e '\n\e[45mYour wallet address:' $WALLET_ADDRESS '\e[0m\n'
 
+break
+
 sudo tee <<EOF >/dev/null $HOME/.stafihub/stafihub_add_valkey.sh 
 #!/usr/bin/expect -f
 EOF
