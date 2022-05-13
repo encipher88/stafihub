@@ -192,6 +192,10 @@ function createValidator {
 	--gas-prices=0.025ufis \ 
 	--yes
 	
+	stafihubd query staking validators --limit=3000 -oj  | jq -r '.validators[] | [(.tokens|tonumber / pow(10;6)), .description.moniker, .operator_address, .status, .jailed] | @csv'  | column -t -s"," | tr -d '"'| sort -k1 -n -r | nl
+        
+	echo -e '\n\e[42mFIND YOUR MONIKER - IF YES THEN Ctrl+C \e[0m\n' && sleep 1
+	
 }
 
 
