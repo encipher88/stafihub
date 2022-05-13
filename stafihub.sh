@@ -177,7 +177,7 @@ function deleteStafihub {
 
 function createValidator {
 	echo -e '\n\e[42mCreate validator...\e[0m\n' && sleep 1
-	if [[ `stafihubd q bank balances $WALLET_ADDRESS | grep amount` -gt "1" ]]; then
+	
    
 	stafihubd tx staking create-validator -y 
 	--amount=1000000ufis 
@@ -190,12 +190,8 @@ function createValidator {
 	--from=$WALLET
 	--chain-id=$CHAIN_ID 
 	--gas-prices=0.025ufis 
+	--yes
 	
-	else
-      echo -e "Not enought balances"
-	  echo -e "You can ask for tokens in the #faucet Discord channel. \e[32m!faucet send YOUR_WALLET_ADDRESS\e[39m!"
-	  
-	fi
 }
 
 
