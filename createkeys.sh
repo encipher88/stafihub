@@ -29,6 +29,7 @@ cd $HOME
 
 sleep 5
 
+touch $HOME/.stafihub/valop.txt
 sudo tee <<EOF >/dev/null $HOME/.stafihub/stafihub_add_valkey.sh 
 #!/usr/bin/expect -f
 EOF
