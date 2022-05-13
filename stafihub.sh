@@ -225,7 +225,7 @@ do
 		"Restore wallet")
 			echo -e '\n\e[33mYou choose install snapshot...\e[0m\n' && sleep 1
 			recoverWallet
-			echo -e '\n\e[33mSnapshot was restored\e[0m\n' && sleep 1
+			echo -e '\n\e[33mYour wallet was recovered\e[0m\n' && sleep 1
 			break
             ;;
 			
