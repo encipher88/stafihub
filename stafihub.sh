@@ -200,9 +200,9 @@ send -- \"$PASSWORD\r\"
 
 expect eof" >> $HOME/.stafihub/stafihub_add_valkey.sh
 sudo chmod +x $HOME/.stafihub/stafihub_add_valkey.sh
-$HOME/.stafihub/stafihub_add_valkey.sh &>> $HOME/.stafihub/$valop.txt
+$HOME/.stafihub/stafihub_add_valkey.sh &>> $HOME/.stafihub/valop.txt
 
-export VALOPER_ADDRESS=`cat $HOME/.stafihub/$valop.txt | grep '^stafivaloper' | awk '{print$1}' | sed 's/.$//'`
+export VALOPER_ADDRESS=`cat $HOME/.stafihub/valop.txt | grep '^stafivaloper' | awk '{print$1}' | sed 's/.$//'`
 echo 'export VALOPER_ADDRESS='${VALOPER_ADDRESS} >> $HOME/.bash_profile
 . $HOME/.bash_profile
 echo -e '\n\e[45mYour wallet address:' $VALOPER_ADDRESS '\e[0m\n'
