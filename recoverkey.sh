@@ -3,7 +3,7 @@
 	apt install expect
 	sleep 2
 		if [[ ! $mnemonic ]]; then
-		read -r -p "Enter bip39 mnemonic: " var1 var2 var3 var4 var5 var6 var7 var8 var9 var10 var11 var12 var13 var14 var15 var16 var17 var18 var19 var20 var21 var22 var23 var24 "
+		read -p "Enter bip39 mnemonic: " mnemonic
 		echo 'export mnemonic='${mnemonic} >> $HOME/.bash_profile
 	fi
 	source $HOME/.bash_profile
@@ -12,10 +12,9 @@ sudo tee <<EOF >/dev/null $HOME/.stafihub/stafihub_add_key.sh
 EOF
 echo "set timeout -1
 spawn stafihubd keys add $WALLET --recover --home $HOME/.stafihub
+match_max 100000
 expect -exact \"Enter your bip39 mnemonic\"
 send -- \"$mnemonic\r\"
-
-match_max 100000
 expect -exact \"Enter keyring passphrase:\"
 send -- \"$PASSWORD\r\"
 expect -exact \"\r
