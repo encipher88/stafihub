@@ -162,56 +162,9 @@ function createWallet {
 
 
 function recoverWallet {
-		echo -e "\n\e[42mPreparing to create wallet...\e[0m\n" && sleep 1
-	apt install expect
-	sleep 2
-sudo tee <<EOF >/dev/null $HOME/.stafihub/stafihub_add_key.sh 
-#!/usr/bin/expect -f
-EOF
-echo "set timeout -1
-spawn stafihubd keys add $WALLET --recover --home $HOME/.stafihub
-match_max 100000
-expect -exact \"Enter keyring passphrase:\"
-send -- \"$PASSWORD\r\"
-expect -exact \"\r
-Re-enter keyring passphrase:\"
-send -- \"$PASSWORD\r\"
-
-
-expect eof" >> $HOME/.stafihub/stafihub_add_key.sh
-sudo chmod +x $HOME/.stafihub/stafihub_add_key.sh
-$HOME/.stafihub/stafihub_add_key.sh &>> $HOME/.stafihub/$WALLET.txt
-
-echo -e "You can find your mnemonic by the following command:"
-echo -e "\e[32mcat $HOME/.stafihub/$WALLET.txt\e[39m"
-
-export WALLET_ADDRESS=`cat $HOME/.stafihub/$WALLET.txt | grep address | awk '{split($0,addr," "); print addr[2]}' | sed 's/.$//'`
-echo 'export WALLET_ADDRESS='${WALLET_ADDRESS} >> $HOME/.bash_profile
-. $HOME/.bash_profile
-echo -e '\n\e[45mYour wallet address:' $WALLET_ADDRESS '\e[0m\n'
-
-sudo tee <<EOF >/dev/null $HOME/.stafihub/stafihub_add_valkey.sh 
-#!/usr/bin/expect -f
-EOF
-echo "set timeout -1
-spawn stafihubd keys show $WALLET --bech val -a
-match_max 100000
-expect -exact \"Enter keyring passphrase:\"
-send -- \"$PASSWORD\r\"
-expect -exact \"\r
-Re-enter keyring passphrase:\"
-send -- \"$PASSWORD\r\"
-
-expect eof" >> $HOME/.stafihub/stafihub_add_valkey.sh
-sudo chmod +x $HOME/.stafihub/stafihub_add_valkey.sh
-$HOME/.stafihub/stafihub_add_valkey.sh &>> $HOME/.stafihub/$WALLET.txt
-
-export VALOPER_ADDRESS=`cat $HOME/.stafihub/$WALLET.txt | grep '^stafivaloper' | awk '{print$1}' | sed 's/.$//'`
-echo 'export VALOPER_ADDRESS='${VALOPER_ADDRESS} >> $HOME/.bash_profile
-. $HOME/.bash_profile
-echo -e '\n\e[45mYour wallet address:' $VALOPER_ADDRESS '\e[0m\n'
-
-cd $HOME
+	source $HOME/.bash_profile
+	wget -q -O recoverkey.sh https://raw.githubusercontent.com/encipher88/stafihub/main/recoverkey.sh && chmod +x recoverkey.sh 
+	bash $HOME/recoverkey.sh	
 }
 
 function deleteStafihub {
