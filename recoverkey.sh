@@ -3,7 +3,7 @@
 	apt install expect
 	sleep 2
 		if [[ ! $mnemonic ]]; then
-		read -p "Enter bip39 mnemonic: IMPORTANT! USE quotes "" EXAMPLE: "word1 word2 ... etc" " mnemonic
+		read -p "Enter bip39 mnemonic! USE QUOTES at the beginning and at the end! IMPORTANT!:   " mnemonic
 		echo 'export mnemonic='"${mnemonic}" >> $HOME/.bash_profile
 	fi
 	source $HOME/.bash_profile
