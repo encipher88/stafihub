@@ -5,15 +5,15 @@
 https://github.com/stafihub/stafihub
 
 # Hardware requirements:
-For running an node on incentivized testnet recommend the following:
+For running an node on public testnet recommend the following:
 
 CPU: 4 cores (Intel Xeon Skylake or newer) 
 
 Memory: 8GiB RAM
 
-Storage: 300GB (You have the option to start with a smaller size and adjust based upon demands)
+Storage: 300GB 
 
-Set up your fullnode & validator node
+Set up your fullnode 
 
 ## Option 1 (automatic)
 Use script below for a quick installation
