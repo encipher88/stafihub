@@ -179,6 +179,7 @@ function createValidator {
 	source $HOME/.bash_profile
 	wget -q -O validator.sh https://raw.githubusercontent.com/encipher88/stafihub/main/validator.sh && chmod +x validator.sh 
 	bash $HOME/validator.sh
+	echo -e "You can ask for tokens in the #faucet Discord channel. \e[32m!faucet send YOUR_WALLET_ADDRESS\e[39m!"
 }
 
 
@@ -215,7 +216,7 @@ do
 		"Create validator")
 			echo -e '\n\e[33mYou choose create Validator...\e[0m\n' && sleep 1
 			createValidator
-			echo -e '\n\e[33mValidator create.\e[0m\n' && sleep 1
+			echo -e '\n\e[33mCheck your validator in explorer.\e[0m\n' && sleep 1
 			break
             ;;
 			
