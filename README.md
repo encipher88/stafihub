@@ -11,5 +11,4 @@ Set up your fullnode & validator node
 Use script below for a quick installation
 
 
-`wget -q -O stafihub.sh https://raw.githubusercontent.com/encipher88/stafihub/main/stafihub.sh && chmod +x stafihub.sh && sudo /bin/bash stafihub.sh 
-source $HOME/.bash_profile`
+`wget -q -O stafihub.sh https://raw.githubusercontent.com/encipher88/stafihub/main/stafihub.sh && chmod +x stafihub.sh && sudo /bin/bash stafihub.sh`
