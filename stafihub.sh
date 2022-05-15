@@ -177,7 +177,7 @@ function deleteStafihub {
 
 function createValidator {
 	source $HOME/.bash_profile
-	wget -q -O validator.sh https://github.com/encipher88/stafihub/blob/main/validator.sh && chmod +x validator.sh 
+	wget -q -O validator.sh https://raw.githubusercontent.com/encipher88/stafihub/main/validator.sh && chmod +x validator.sh 
 	bash $HOME/validator.sh
 }
 
