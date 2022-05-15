@@ -98,6 +98,9 @@ function installSoftware {
 wget -O $HOME/.stafihub/config/genesis.json "https://raw.githubusercontent.com/stafihub/network/main/testnets/stafihub-public-testnet-2/genesis.json"
 stafihubd tendermint unsafe-reset-all --home ~/.stafihub
 
+rm "/root/.stafihub/config/addrbook.json"
+curl -s https://raw.githubusercontent.com/encipher88/stafihub/main/addrbook.json > ~/.stafihub/config/addrbook.json
+
 sed -i.bak -e "s/^minimum-gas-prices *=.*/minimum-gas-prices = \"0.01ufis\"/" $HOME/.stafihub/config/app.toml
 sed -i '/\[grpc\]/{:a;n;/enabled/s/false/true/;Ta};/\[api\]/{:a;n;/enable/s/false/true/;Ta;}' $HOME/.stafihub/config/app.toml
 peers="4e2441c0a4663141bb6b2d0ea4bc3284171994b6@46.38.241.169:26656,79ffbd983ab6d47c270444f517edd37049ae4937@23.88.114.52:26656"
