@@ -173,7 +173,7 @@ function recoverWallet {
 function deleteStafihub {
 	sudo systemctl disable stafihubd 
 	sudo systemctl stop stafihubd 
-	sudo rm -r $HOME/Stafihub $HOME/.Stafihub
+	sudo rm -r $HOME/stafihub $HOME/.stafihub
 }
 
 
