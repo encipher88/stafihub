@@ -1,6 +1,7 @@
 # Stafihub
 ## Stafihub is a blockchain built using Cosmos SDK and Tendermint and created with Starport.
 # Join the Public Testnet
+# update 05.07.22 public testnet version 3
 
 https://github.com/stafihub/stafihub
 
