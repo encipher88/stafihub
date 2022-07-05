@@ -48,7 +48,7 @@ function setupVars {
 	echo -e '\n\e[45mYour wallet password:' $PASSWORD '\e[0m\n'
 	
 echo "export WALLET=wallet" >> $HOME/.bash_profile
-echo "export CHAIN_ID=stafihub-public-testnet-2" >> $HOME/.bash_profile
+echo "export CHAIN_ID=stafihub-public-testnet-3" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 
 echo '================================================='
@@ -91,11 +91,11 @@ function installSoftware {
 	sudo systemctl stop stafihubd 
 	sudo rm -r $HOME/Stafihub $HOME/.Stafihub
 	. $HOME/.bash_profile
-	 git clone --branch public-testnet-v2 https://github.com/stafihub/stafihub
+	 git clone --branch public-testnet-v3 https://github.com/stafihub/stafihub
 	 cd $HOME/stafihub && make install
 	 
 	 stafihubd init $MONIKER --chain-id $CHAIN_ID
-wget -O $HOME/.stafihub/config/genesis.json "https://raw.githubusercontent.com/stafihub/network/main/testnets/stafihub-public-testnet-2/genesis.json"
+wget -O $HOME/.stafihub/config/genesis.json "https://raw.githubusercontent.com/stafihub/network/main/testnets/stafihub-public-testnet-3/genesis.json"
 stafihubd tendermint unsafe-reset-all --home ~/.stafihub
 
 rm "/root/.stafihub/config/addrbook.json"
